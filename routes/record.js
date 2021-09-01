@@ -53,7 +53,7 @@ recordRoutes.route("/update/:id").post(function (req, res) {
 });
 
 // This section will help you delete a record
-recordRoutes.route("/:id").delete((req, res) => {
+recordRoutes.route("/record/delete/:id").delete((req, res) => {
   let db_connect = dbo.getDb("employees");
   var myquery = { id: req.body.id };
   db_connect.collection("records").deleteOne(myquery, function (err, obj) {
